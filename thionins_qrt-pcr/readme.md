@@ -1,4 +1,4 @@
-# qRT-PCR Delta-Delta Ct Analysis
+# RT-qPCR Delta-Delta Ct Analysis
 
 ## Overview
 
