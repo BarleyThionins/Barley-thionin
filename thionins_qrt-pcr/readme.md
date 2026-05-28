@@ -2,7 +2,7 @@
 
 ## Overview
 
-This script analyses qRT-PCR Ct data using the Delta-Delta Ct method and generates publication-style grouped boxplots for each reference gene.
+This script analyses RT-qPCR Ct data using the Delta-Delta Ct method and generates publication-style grouped boxplots for each reference gene.
 
 It was designed for barley gene expression analysis under untreated, clip-cage control, and aphid infestation conditions, but can be adapted to other plant species, treatments, or reference genes.
 
@@ -41,7 +41,7 @@ The input file must contain the following columns:
 | Column | Description |
 |---|---|
 | `genotype` | Plant genotype or accession name |
-| `CT` | qRT-PCR Ct value |
+| `CT` | rt-qPCR Ct value |
 | `reference_gene` | Reference gene used for normalization |
 | `repeat` | Biological repeat ID |
 | `treatment` | Experimental treatment |
@@ -71,7 +71,7 @@ Run the script from the command line using: python qrt_pcr_delta_delta_ct_analys
 
 ## Output
 
-The script generates an Excel file named qRT-PCR_analysis_results.xlsx and a figures directory containing grouped boxplots for each reference gene in both PNG and TIF formats.
+The script generates an Excel file named RT-qPCR_analysis_results.xlsx and a figures directory containing grouped boxplots for each reference gene in both PNG and TIF formats.
 
 The Excel file includes the following sheets: Raw_Data (cleaned input data), ave_reference_CT (mean reference Ct values), Sample_with_Delta_Ct (Delta Ct values), Global_Control_Delta_Ct (calibrator baseline), Per_Repeat_Values (Delta Ct, Delta-Delta Ct, and log2 fold change per biological repeat), and Summary_Stats (aggregated statistics).
 
