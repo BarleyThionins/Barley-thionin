@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 """
-Script: qrt_pcr__analysis.py
+Script: rt_qpcr__analysis.py
 
 Description:
-    Analyse qRT-PCR data using the △△Ct method and generate
+    Analyse rt-qPCR data using the △△Ct method and generate
     publication-style grouped boxplots for each reference gene.
 
 Input:
-    1. qRT-PCR Ct data in Excel format
+    1. rt-qPCR Ct data in Excel format
 
        Required columns:
            genotype
@@ -24,7 +24,7 @@ Input:
            reference_gene
 
 Output:
-    1. qRT-PCR_analysis_results.xlsx
+    1. rt-qPCR_analysis_results.xlsx
        Excel workbook containing cleaned data, reference Ct values,
        Delta Ct, Delta-Delta Ct, relative expression, log2 fold change,
        and summary statistics.
@@ -115,7 +115,7 @@ GLOBAL_CALIBRATOR_TREATMENT = "Untreated control"
 def parse_args():
     parser = argparse.ArgumentParser(
         description=(
-            "Analyse qRT-PCR data using the Delta-Delta Ct method "
+            "Analyse rt-qPCR data using the Delta-Delta Ct method "
             "and generate grouped boxplots."
         )
     )
@@ -123,7 +123,7 @@ def parse_args():
     parser.add_argument(
         "--input_file",
         required=True,
-        help="qRT-PCR Ct data in Excel format."
+        help="rt-qPCR Ct data in Excel format."
     )
 
     parser.add_argument(
@@ -212,7 +212,7 @@ def clean_input_data(df):
 
 
 # ==============================
-# qRT-PCR calculation
+# rt-qPCR calculation
 # ==============================
 
 def calculate_qpcr_values(df):
@@ -575,7 +575,7 @@ def main():
         summary_stats,
     ) = calculate_qpcr_values(cleaned_df)
 
-    output_excel = output_dir / "qRT-PCR_analysis_results.xlsx"
+    output_excel = output_dir / "rt-qPCR_analysis_results.xlsx"
 
     save_excel_results(
         output_excel=output_excel,
